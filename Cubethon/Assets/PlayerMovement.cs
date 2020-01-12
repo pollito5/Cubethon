@@ -32,12 +32,12 @@ public class PlayerMovement : MonoBehaviour
 
         if (m_MoveRight)
         {
-            m_RB.AddForce(m_MovementForce, 0, 0);
+            m_RB.AddForce(m_MovementForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
 
         if(m_MoveLeft)
         {
-            m_RB.AddForce(-m_MovementForce, 0, 0); //flip direction
+            m_RB.AddForce(-m_MovementForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange); //flip direction
         }
 
         //R
