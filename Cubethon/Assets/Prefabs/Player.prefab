@@ -119,14 +119,19 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3110746846904405812}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 00dad1768c9e38d4c99531156b9ac07a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ForwardForceBool: 0
   m_RB: {fileID: 3110746846904405813}
   m_ForwardForce: 3000
   m_MovementForce: 100
+  m_MoveForward: w
+  m_MoveBack: s
+  m_MoveLeft: a
+  m_MoveRight: d
 --- !u!114 &3110746846904405819
 MonoBehaviour:
   m_ObjectHideFlags: 0

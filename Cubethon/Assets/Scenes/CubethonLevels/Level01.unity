@@ -827,9 +827,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00dad1768c9e38d4c99531156b9ac07a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_ForwardForceBool: 1
   m_RB: {fileID: 349845941}
-  m_ForwardForce: 3000
+  m_ForwardForce: 50
   m_MovementForce: 100
+  m_MoveForward: 0
+  m_MoveBack: 0
+  m_MoveLeft: 97
+  m_MoveRight: 100
 --- !u!114 &349845947
 MonoBehaviour:
   m_ObjectHideFlags: 0
