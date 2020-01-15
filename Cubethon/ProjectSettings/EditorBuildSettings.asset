@@ -15,6 +15,6 @@ EditorBuildSettings:
     path: Assets/Scenes/Credits.unity
     guid: e5b6bf34a7f533a449757244ef2c97a8
   - enabled: 1
-    path: Assets/Scenes/Seek_Flee.unity
+    path: Assets/Scenes/Homework/Movements.unity
     guid: 8901eb02f28d9494cb534f3a07571371
   m_configObjects: {}

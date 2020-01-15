@@ -16,8 +16,12 @@ public class PlayerMovement : MonoBehaviour
                  m_MoveBackBool = false,
                  m_MoveUpBool = false;
 
-
+    private bool m_Wander_Active = false;
                  
+    public void ToggleWander()
+    {
+        m_Wander_Active = !m_Wander_Active;
+    }
 
     //Update is called once per frame - faster than Fixed Update which is better for getting player inputs
     void Update()
@@ -46,28 +50,36 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame - @@@FixedUpdate to be used for code interacting with physics.
     void FixedUpdate()
     {
-        //Add a force to the body
-        if(m_MoveUpBool || m_ForwardForceBool)
-        {
-            m_RB.AddForce(0, 0, m_ForwardForce * Time.deltaTime, ForceMode.VelocityChange); //delta time is the number of seconds between frames to be used for portability.
-        }
 
-        if(m_MoveBackBool)
+        switch(m_Wander_Active)
         {
-            m_RB.AddForce(0, 0, -m_ForwardForce * Time.deltaTime, ForceMode.VelocityChange);
-        }
+            case true:
+                //Wander
+                //Do nothing
+            break;
+            default:
+                //Add a force to the body
+                if (m_MoveUpBool || m_ForwardForceBool)
+                {
+                    m_RB.AddForce(0, 0, m_ForwardForce * Time.deltaTime, ForceMode.VelocityChange); //delta time is the number of seconds between frames to be used for portability.
+                }
 
-        if (m_MoveRightBool)
-        {
-            m_RB.AddForce(m_MovementForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
-        }
+                if (m_MoveBackBool)
+                {
+                    m_RB.AddForce(0, 0, -m_ForwardForce * Time.deltaTime, ForceMode.VelocityChange);
+                }
 
-        if(m_MoveLeftBool)
-        {
-            m_RB.AddForce(-m_MovementForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange); //flip direction
-        }
+                if (m_MoveRightBool)
+                {
+                    m_RB.AddForce(m_MovementForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
+                }
 
-       
+                if (m_MoveLeftBool)
+                {
+                    m_RB.AddForce(-m_MovementForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange); //flip direction
+                }
+                break;
+        }
 
         //Reset movement 
         m_MoveLeftBool = false;
